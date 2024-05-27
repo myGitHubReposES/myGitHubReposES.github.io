@@ -5,38 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./draft-webcam.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-size:16px
+            font-family: 'Open Sans', sans-serif;
         }
     </style>
+
+
 
 </head>
 
 <body>
-    <p>No incluye atributo accept</p>
-    <input class="file-input" type="file" style="display: block; margin-bottom: 20px;" onchange="alert('change')"/>
-    <p>Incluye atributo accept para formato image/*</p>
-    <input type="file" name="" id="" accept="image/*" style="display: block; margin-bottom: 20px;" onchange="alert('change')">
-    <p>No incluye atributo accept, incluye atributo capture</p>
-    <input class="file-input" type="file" capture style="display: block; margin-bottom: 20px;" onchange="alert('change')"/>
-    <p>Incluye atributo accept para formato image/*, incluye atributo capture</p>
-    <input class="file-input" type="file" accept="image/*" capture="environment" style="display: block; margin-bottom: 20px;" onchange="alert('change')"/>
-    <!-- Camera -->
-    <main id="camera" hidden>
-        <!-- Camera sensor -->
-        <canvas id="camera--sensor"></canvas>
 
-        <!-- Camera view -->
-        <video id="camera--view" autoplay playsinline></video>
+    <h1>Pruebas de compatibilidad entre navegadores de dispositivos móviles</h1>
+    <h2>Descripción</h2>
+    <p>Esta página contiene diferentes elementos input file donde se puede ver como se puede configurar el atributo accept y capture.</p>
 
-        <!-- Camera output -->
-        <img src="//:0" alt="" id="camera--output">
-        <!-- Camera trigger -->
-        <button id="camera--trigger">Take a picture</button>
-    </main>
-    <!--<script src="./draft-webcam.js"></script>-->
+    <h2>Atributo accept</h2>
+    <p>Formatos válidos: JPG, PNG, BMP, TIFF y PDF</p>
+<pre>
+    <code>
+        &lt;input type=&quot;file&quot; accept=&quot;image/*,.pdf&quot; /&gt;
+    </code>
+</pre>
+
+    <h2>Atributo capture</h2>
+    <p>Especifica que, opcionalmente, se debe capturar un nuevo archivo y qué dispositivo se debe utilizar para capturar ese nuevo medio (user, camera o environment).</p>
+<pre>
+    <code>
+        &lt;input type=&quot;file&quot; capture /&gt;
+    </code>
+</pre>
+
+    <h2>Lista de Navegadores</h2>
+    <ul>
+        <li>Safari 17 a 14</li>
+        <li>Chrome, Firefox Y edge</li>
+    </ul>
+
+    <h2>Elementos de testeo</h2>
+    <form action="">
+        <p>Input sin atributos</p>
+        <input class="file-input" type="file" style="display: block;" />
+        <p>Input con atributo <code>accept = "image/*"</code></p>
+        <input class="file-input" type="file" accept="image/*" style="display: block;" />
+        <p>Input con atributo <code>accept = "image/*, .pdf"</code></p>
+        <input class="file-input" type="file" accept="image/*, .pdf" style="display: block;" />
+        <p>Input con atributo <code>accept = ".jpg, .png, .bmp, .tiff, .pdf"</code></p>
+        <input class="file-input" type="file" accept=".jpg, .png, .bmp, .tiff, .pdf" style="display: block;" />
+        <hr>
+        <p>Input con atributo <code>capture</code></p>        
+        <input class="file-input" type="file" capture style="display: block;" />
+        <hr>
+        <p>Input con atributo <code>accept = "image/*"</code> y <code>;capture=camera</code></p>        
+        <input class="file-input" type="file" accept="image/*;capture=camera" capture style="display: block;" />
+    </form>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const fileInputList = document.querySelectorAll('.file-input');
+
+            fileInputList.forEach(fileInput => {
+                fileInput.addEventListener('change', () => {
+                    alert(window.navigator.userAgent);
+                });
+            });
+            
+        });
+        
+
+
+    </script>
+
 </body>
 
 </html>
