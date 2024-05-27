@@ -19,6 +19,10 @@
     <input class="file-input" type="file" style="display: block; margin-bottom: 20px;" onchange="alert('change')"/>
     <p>Incluye atributo accept para formato image/*</p>
     <input type="file" name="" id="" accept="image/*" style="display: block; margin-bottom: 20px;" onchange="alert('change')">
+    <p>No incluye atributo accept, incluye atributo capture</p>
+    <input class="file-input" type="file" capture style="display: block; margin-bottom: 20px;" onchange="alert('change')"/>
+    <p>Incluye atributo accept para formato image/*, incluye atributo capture</p>
+    <input class="file-input" type="file" accept="image/*" capture style="display: block; margin-bottom: 20px;" onchange="alert('change')"/>
     <!-- Camera -->
     <main id="camera" hidden>
         <!-- Camera sensor -->
