@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <input type="file" name="" id="" accept="image/*" style="display: block; margin-bottom: 20px;" onchange="alert('change')">
+    <input class="file-input" type="file" style="display: block; margin-bottom: 20px;" />
+    <input type="file" name="" id="" accept="image/*" style="display: block; margin-bottom: 20px;" onchange="alert('change')" hidden>
     <!-- Camera -->
     <main id="camera" hidden>
         <!-- Camera sensor -->
@@ -24,7 +25,7 @@
         <!-- Camera trigger -->
         <button id="camera--trigger">Take a picture</button>
     </main>
-    <script src="./draft-webcam.js"></script>
+    <!--<script src="./draft-webcam.js"></script>-->
 </body>
 
 </html>
