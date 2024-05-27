@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./draft-webcam.css">
+    <style>
+        body {
+            font-size:16px
+        }
+    </style>
 
 </head>
 
 <body>
-    <input class="file-input" type="file" style="display: block; margin-bottom: 20px;" />
-    <input type="file" name="" id="" accept="image/*" style="display: block; margin-bottom: 20px;" onchange="alert('change')" hidden>
+    <p>No incluye atributo accept</p>
+    <input class="file-input" type="file" style="display: block; margin-bottom: 20px;" onchange="alert('change')"/>
+    <p>Incluye atributo accept para formato image/*</p>
+    <input type="file" name="" id="" accept="image/*" style="display: block; margin-bottom: 20px;" onchange="alert('change')">
     <!-- Camera -->
     <main id="camera" hidden>
         <!-- Camera sensor -->
