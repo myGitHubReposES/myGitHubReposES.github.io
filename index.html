@@ -57,12 +57,15 @@
         <input class="file-input" type="file" accept="image/*, .pdf" style="display: block;" />
         <p>Input con atributo <code>accept = ".jpg, .png, .bmp, .tiff, .pdf"</code></p>
         <input class="file-input" type="file" accept=".jpg, .png, .bmp, .tiff, .pdf" style="display: block;" />
+        <p>Input con atributo <code>accept = "image/*;capture=camera"</code></p>        
+        <input class="file-input" type="file" accept="image/*;capture=camera" capture style="display: block;" />
         <hr>
         <p>Input con atributo <code>capture</code></p>        
-        <input class="file-input" type="file" capture style="display: block;" />
-        <hr>
-        <p>Input con atributo <code>accept = "image/*"</code> y <code>;capture=camera</code></p>        
-        <input class="file-input" type="file" accept="image/*;capture=camera" capture style="display: block;" />
+        <input class="file-input" type="file" capture style="display: block;" />        
+        <p>Input con atributo <code>accept = "image/*"</code> y <code>capture</code></p>        
+        <input class="file-input" type="file" accept="image/*" capture style="display: block;" />
+        <p>Input con atributo <code>accept = "image/*"</code> y <code>capture="environment"</code></p>        
+        <input class="file-input" type="file" accept="image/*" capture="environment" style="display: block;" />
     </form>
     <script>
 
